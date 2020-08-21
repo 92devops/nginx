@@ -8,30 +8,37 @@
 
 如果用ssl模块，要安装openssl开发包;如果用url重写模块，要安装pcre的开发包;默认有可能都没安装
 
+```
 ~]# yum -y install openssl-devel pcre-devel zlib-devel
+```
 
 安装编译环境包组
 
+```
 ~]# yum -y groupinstall "Development Tools" "Server Platform Development"
+```
 
 添加用户和程序目录
 
+```
 ~]# useradd nginx
-
 ~]# mkdir /var/cache/nginx && chown nginx.nginx /var/cache/nginx/
+```
 
 #### 获取源码包
 
 首先下载程序包
 
+```
 ~]# wget https://nginx.org/download/nginx-1.18.0.tar.gz
+```
 
 > 18为次版本号，为偶数表示是稳定版本
 
 #### 编译安装
 
+```
 ~]# tar -xf nginx-1.18.0.tar.gz && cd nginx-1.18.0
-
 ~]# ./configure --prefix=/usr/local/nginx \
                 --sbin-path=/usr/sbin/nginx \
                 --user=nginx \
@@ -68,8 +75,8 @@
                 --with-mail_ssl_module \
                 --with-file-aio \
                 --with-http_v2_module          
-
 ~]# make && make install
+```
 
 ## NGINX 命令
 

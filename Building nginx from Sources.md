@@ -73,14 +73,25 @@
 ## NGINX 命令
 
 nginx -h
+
     Shows the NGINX help menu.
+
 nginx -v
+
     Shows the NGINX version.
+
 nginx -V
+
     Shows the NGINX version, build information, and configura‐ tion arguments, which shows the modules built in to the NGINX binary.
+
 nginx -t
+
     Tests the NGINX configuration.
+
 nginx -T
+
     Tests the NGINX configuration and prints the validated config‐ uration to the screen. This command is useful when seeking support.
+
 nginx -s signal
+
     The -s flag sends a signal to the NGINX master process. You can send signals such as stop, quit, reload, and reopen. The stop signal discontinues the NGINX process immediately. The quit signal stops the NGINX process after it finishes processing inflight requests. The reload signal reloads the configuration. The reopen signal instructs NGINX to reopen log files.

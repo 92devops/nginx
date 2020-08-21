@@ -16,11 +16,13 @@
 ## 使用
 
 ```
-log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                  '$status $body_bytes_sent "$http_referer" '
-                  '"$http_user_agent" "$http_x_forwarded_for" "$upstream_addr"';
+log_format main '[$time_local] $remote_addr $server_name "$request" '
+                '$status $body_bytes_sent "$http_referer" '
+                '"$http_user_agent" "$http_x_forwarded_for" '
+                '$upstream_addr $request_time $upstream_response_time';
 ```
 
+为了让 GoAccess 能适配这个格式，需要将 goaccess.conf 中修改成如下格式 `%^[%d:%t %^] %h %v "%r" %s %b "%R" "%u"`
 
 ```
 ~]# LANG="zh_CN.UTF-8"

@@ -28,6 +28,15 @@ log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
 ```
 
 ```
+cat  >>/usr/local/etc/goaccess/goaccess.conf<<EOF
+time-format %H:%M:%S
+date-format %d/%b/%Y
+#NCSA Combined Log Format
+log-format %h %^[%d:%t %^] "%r" %s %b "%R" "%u"
+EOF
+```
+
+```
 ~]# cat goaccess.sh
 #cat /root/goaccess.sh
 #!/bin/bash
